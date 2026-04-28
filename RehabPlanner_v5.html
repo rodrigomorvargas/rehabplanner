@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RehabPlanner</title>
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2d5a3d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="RehabPlanner">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 :root {
@@ -1450,5 +1454,9 @@ function exportarExcel(){
   XLSX.writeFile(wb,'RehabPlanner_REM28_'+desde+'_'+hasta+'.xlsx');
 }
 </script>
-</body>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/rehabplanner/sw.js');
+}
+</script></body>
 </html>
